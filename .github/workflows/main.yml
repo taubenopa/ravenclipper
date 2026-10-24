@@ -68,7 +68,7 @@ jobs:
         run: cmake --build build --target RavenClipper_VST3 --parallel 4
 
       - name: Installer (.pkg) bauen
-        run: ./installer/mac/build_pkg.sh "${{ steps.ver.outputs.version }}"
+        run: bash installer/mac/build_pkg.sh "${{ steps.ver.outputs.version }}"
         # Für signierte/notarisierte Builds hier APP_SIGN_ID / PKG_SIGN_ID als Secrets setzen (siehe README).
 
       - uses: actions/upload-artifact@v4
